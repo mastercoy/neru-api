@@ -1,4 +1,8 @@
 defmodule BackendWeb.Telemetry do
+  @moduledoc """
+  "hi there"
+  """
+
   use Supervisor
   import Telemetry.Metrics
 
@@ -7,6 +11,7 @@ defmodule BackendWeb.Telemetry do
   end
 
   @impl true
+
   def init(_arg) do
     children = [
       # Telemetry poller will execute the given period measurements
