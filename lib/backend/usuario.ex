@@ -39,12 +39,6 @@ defmodule Backend.Usuario do
     |> validate_required([
       :name,
       :cpf,
-      :street_address,
-      :number_address,
-      :complement_address,
-      :neighborhood_address,
-      :city,
-      :state,
       :postal_code
     ])
   end
