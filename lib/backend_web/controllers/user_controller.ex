@@ -2,7 +2,7 @@ defmodule BackendWeb.UserController do
   use BackendWeb, :controller
   import Ecto.Changeset
 
-  alias Backend.Usuario
+  alias Backend.{Repo, Usuario}
 
   def run(params) do
     %Usuario{}
@@ -22,7 +22,7 @@ defmodule BackendWeb.UserController do
       :cpf,
       :postal_code
     ])
-    |> IO.inspect()
+    |> Repo.insert()
   end
 
   # todo limpar

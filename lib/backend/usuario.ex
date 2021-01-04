@@ -18,5 +18,4 @@ defmodule Backend.Usuario do
     field :street_address, :string
     timestamps()
   end
-
 end
