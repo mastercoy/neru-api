@@ -1,4 +1,8 @@
 defmodule Backend.Usuario do
+  @moduledoc """
+  User schema
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -16,10 +20,32 @@ defmodule Backend.Usuario do
     timestamps()
   end
 
-  @doc false
   def changeset(usuario, attrs) do
     usuario
-    |> cast(attrs, [:name, :cpf, :street_address, :number_address, :complement_address, :neighborhood_address, :city, :state, :postal_code])
-    |> validate_required([:name, :cpf, :street_address, :number_address, :complement_address, :neighborhood_address, :city, :state, :postal_code])
+    |> cast(
+      attrs,
+      [
+        :name,
+        :cpf,
+        :street_address,
+        :number_address,
+        :complement_address,
+        :neighborhood_address,
+        :city,
+        :state,
+        :postal_code
+      ]
+    )
+    |> validate_required([
+      :name,
+      :cpf,
+      :street_address,
+      :number_address,
+      :complement_address,
+      :neighborhood_address,
+      :city,
+      :state,
+      :postal_code
+    ])
   end
 end

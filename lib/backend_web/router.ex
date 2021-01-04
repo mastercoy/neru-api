@@ -19,6 +19,12 @@ defmodule BackendWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/api", BackendWeb do
+    pipe_through :api
+
+    post "/accounts", UserController, :createUser
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", BackendWeb do
   #   pipe_through :api
