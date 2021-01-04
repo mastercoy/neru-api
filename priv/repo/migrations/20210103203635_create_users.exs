@@ -4,8 +4,8 @@ defmodule Backend.Repo.Migrations.CreateUsers do
   def change do
     create table(:users) do
       add :name, :string, null: false
-      add :cpf, :string, null: false, unique: true
       add :street_address, :string
+      add :cpf, :string, null: false, unique: true
       add :number_address, :string
       add :complement_address, :string
       add :neighborhood_address, :string

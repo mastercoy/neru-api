@@ -4,7 +4,7 @@ defmodule BackendWeb.UserController do
 
   alias Backend.{Repo, Usuario}
 
-  def run(params) do
+  def create(conn, params) do
     %Usuario{}
     |> cast(params, [
       :name,
