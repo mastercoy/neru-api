@@ -16,30 +16,7 @@ defmodule Backend.Usuario do
     field :postal_code, :string
     field :state, :string
     field :street_address, :string
-
     timestamps()
   end
 
-  def changeset(usuario, attrs) do
-    usuario
-    |> cast(
-      attrs,
-      [
-        :name,
-        :cpf,
-        :street_address,
-        :number_address,
-        :complement_address,
-        :neighborhood_address,
-        :city,
-        :state,
-        :postal_code
-      ]
-    )
-    |> validate_required([
-      :name,
-      :cpf,
-      :postal_code
-    ])
-  end
 end

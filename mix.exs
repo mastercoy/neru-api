@@ -46,7 +46,7 @@ defmodule Backend.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
-      {:viacepex, "~> 0.0.2"}
+      {:cep, "~> 0.0.2"}
     ]
   end
 

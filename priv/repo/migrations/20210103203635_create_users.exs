@@ -17,3 +17,4 @@ defmodule Backend.Repo.Migrations.CreateUsers do
     end
   end
 end
+
