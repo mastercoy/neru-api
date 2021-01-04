@@ -19,27 +19,25 @@ defmodule Backend.Usuarios.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [
-      :city,
-      :complement_address,
-      :cpf,
-      :name,
-      :neighborhood_address,
-      :number_address,
-      :postal_code,
-      :state,
-      :street_address
-    ])
+    |> cast(
+      attrs,
+      [
+        :city,
+        :complement_address,
+        :cpf,
+        :name,
+        :neighborhood_address,
+        :number_address,
+        :postal_code,
+        :state,
+        :street_address
+      ]
+    )
     |> validate_required([
-      :city,
-      :complement_address,
       :cpf,
       :name,
-      :neighborhood_address,
-      :number_address,
-      :postal_code,
-      :state,
-      :street_address
+      :postal_code
     ])
+    |> unique_constraint([:cpf])
   end
 end

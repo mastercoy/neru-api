@@ -5,7 +5,7 @@ defmodule Backend.Repo.Migrations.CreateUsers do
     create table(:users) do
       add :name, :string, null: false
       add :street_address, :string
-      add :cpf, :string, null: false, unique: true
+      add :cpf, :string, null: false
       add :number_address, :string
       add :complement_address, :string
       add :neighborhood_address, :string
@@ -15,5 +15,6 @@ defmodule Backend.Repo.Migrations.CreateUsers do
 
       timestamps()
     end
+      create unique_index(:users, [:cpf])
   end
 end
