@@ -1,40 +1,43 @@
 defmodule BackendWeb.UserController do
   use BackendWeb, :controller
-  import Ecto.Changeset
 
-  alias Backend.{Repo, Usuario}
+  alias Backend.Usuarios
+  alias Backend.Usuarios.User
 
-  def create(conn, params) do
-    %Usuario{}
-    |> cast(params, [
-      :name,
-      :cpf,
-      :street_address,
-      :number_address,
-      :complement_address,
-      :neighborhood_address,
-      :city,
-      :state,
-      :postal_code
-    ])
-    |> validate_required([
-      :name,
-      :cpf,
-      :postal_code
-    ])
-    |> Repo.insert()
+  action_fallback BackendWeb.FallbackController
+
+  def index(conn, _params) do
+    users = Usuarios.list_users()
+    render(conn, "index.json", users: users)
   end
 
-  # todo limpar
-  # def createUser(conn, params) do
-  # a = true
+  def create(conn, %{"user" => user_params}) do
+    with {:ok, %User{} = user} <- Usuarios.create_user(user_params) do
+      conn
+      |> put_status(:created)
+      |> put_resp_header("location", Routes.user_path(conn, :show, user))
+      |> render("show.json", user: user)
+    end
+  end
 
-  # if a === true do
-  # IO.inspect(conn)
-  # IO.puts("+++++")
-  # IO.inspect(params)
-  # else
-  # IO.puts("-----")
-  # end
-  # end
+  def show(conn, %{"id" => id}) do
+    user = Usuarios.get_user!(id)
+    render(conn, "show.json", user: user)
+  end
+
+  def update(conn, %{"id" => id, "user" => user_params}) do
+    user = Usuarios.get_user!(id)
+
+    with {:ok, %User{} = user} <- Usuarios.update_user(user, user_params) do
+      render(conn, "show.json", user: user)
+    end
+  end
+
+  def delete(conn, %{"id" => id}) do
+    user = Usuarios.get_user!(id)
+
+    with {:ok, %User{}} <- Usuarios.delete_user(user) do
+      send_resp(conn, :no_content, "")
+    end
+  end
 end

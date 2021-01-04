@@ -22,7 +22,7 @@ defmodule BackendWeb.Router do
   scope "/api", BackendWeb do
     pipe_through :api
 
-    post "/accounts", UserController, :createUser
+    resources "/accounts", UserController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
