@@ -11,7 +11,10 @@ defmodule BackendWeb.UserController do
     render(conn, "index.json", users: users)
   end
 
+#  def create(conn, params), do: throw params["user"]["postal_code"]
   def create(conn, %{"user" => user_params}) do
+    {:ok, address} = Cep.Client.get_address(user_params["postal_code"])
+    IO.inspect address
     with {:ok, %User{} = user} <- Usuarios.create_user(user_params) do
       conn
       |> put_status(:created)
