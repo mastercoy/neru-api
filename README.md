@@ -24,6 +24,7 @@ Utilizado o  [GitHub](https://github.com/) para versionamento de projeto.
 
 ## Considerações finais
 
+
 * Muito obrigado a [NERU Pagamento](https://www.neru.com.br/) pela oportunidade e incentivo de estudo!
 * Confesso que me candidatei a vaga por pura ousadia. Ao receber o teste eu nunca havia tido contado com Elixir ou o Phoenix.
 * Tudo que aprendi desde a simples instalação do Erlang e do Elixir, construir a api, utilizar a api externa para consulta do CEP, foi durante 3 dias.
