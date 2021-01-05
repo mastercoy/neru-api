@@ -15,6 +15,8 @@ defmodule Backend.Repo.Migrations.CreateUsers do
 
       timestamps()
     end
-      create unique_index(:users, [:cpf])
+
+    create unique_index(:users, [:cpf])
   end
 end
+#{"data":{"city":null,"complement_address":null,"cpf":"123452311","id":22,"name":"teste","neighborhood_address":null,"number_address":null,"postal_code":"45000505","state":null,"street_address":null}}

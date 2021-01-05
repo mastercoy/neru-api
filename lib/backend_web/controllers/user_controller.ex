@@ -11,10 +11,20 @@ defmodule BackendWeb.UserController do
     render(conn, "index.json", users: users)
   end
 
-#  def create(conn, params), do: throw params["user"]["postal_code"]
   def create(conn, %{"user" => user_params}) do
-    {:ok, address} = Cep.Client.get_address(user_params["postal_code"])
-    IO.inspect address
+    {status, address} = Cep.Client.get_address(user_params["postal_code"])
+
+    user_params = if status == :ok do
+      user_params = Map.put(user_params, "city", address.city)
+      user_params = Map.put(user_params, "state", address.state)
+      user_params = Map.put(user_params, "postal_code", address.cep)
+      user_params = Map.put(user_params, "neighborhood_address", address.neighborhood)
+      user_params = Map.put(user_params, "street_address", address.street)
+    else
+      user_params
+    end
+
+
     with {:ok, %User{} = user} <- Usuarios.create_user(user_params) do
       conn
       |> put_status(:created)

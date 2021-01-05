@@ -50,6 +50,20 @@ defmodule Backend.MixProject do
     ]
   end
 
+  #      Ecto.Changeset.change(
+  #        %User{},
+  #        city: address.city,
+  #        postal_code: address.cep,
+  #        neighborhood_address: address.neighborhood,
+  #        state: address.state,
+  #        street_address: address.street
+  #      )
+  #      user_params["city"] = address.city
+  #      user_params["postal_code"] = address.cep
+  #      user_params["neighborhood_address"] = address.neighborhood
+  #      user_params["state"] = address.state
+  #      user_params["street_address"] = address.street
+
   # Aliases are shortcuts or tasks specific to the current project.
   # For example, to install project dependencies and perform other setup tasks, run:
   #
