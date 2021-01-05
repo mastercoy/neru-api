@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "54aa0b74-07fc-4ffa-9c22-c71f3a1cb2e8",
+		"name": "Elixir Neru API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar Usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": {\n\t\t\"name\": \"nylo\",\n\t\t\"cpf\": \"04185785485\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"accounts"
+					]
+				},
+				"description": "Esta api serve para criar um usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Usuário pelo ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": {\n\t\t\"name\": \"nylo\",\n\t\t\"cpf\": \"04185785485\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"accounts"
+					]
+				},
+				"description": "Esta api serve para criar um usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar Usuário por ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": {\n\t\t\"name\": \"nylo\",\n\t\t\"cpf\": \"04185785485\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"accounts"
+					]
+				},
+				"description": "Esta api serve para criar um usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Usuário por ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": {\n\t\t\"name\": \"nylo\",\n\t\t\"cpf\": \"04185785485\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"accounts"
+					]
+				},
+				"description": "Esta api serve para criar um usuário"
+			},
+			"response": []
+		}
+	]
+}

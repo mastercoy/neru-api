@@ -11,6 +11,7 @@ Esse projeto foi construído com intuito de ser contratado pela NERU Pagamento!
 * [Phoenix Framework](https://www.phoenixframework.org/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [asdf](https://github.com/asdf-vm/asdf)
+* [Postman](https://www.postman.com/)
 
 ## Versionamento
 
@@ -30,3 +31,4 @@ Utilizado o  [GitHub](https://github.com/) para versionamento de projeto.
 * Um usuário pode ser criado apenas informando nome, cpf (único) e cep. A api busca o cep e preenche as outras informações (cidade, bairro, rua, estado).
 * Não existe tratamento caso o cep for inválido ou não informado. Por conta da virada de ano tive pouco tempo, mas no pouco tempo que tive dei o meu melhor!
 * Mesmo que não mais para o teste, irei aprimorar essa API e deixar em meu [github](https://github.com/mastercoy).
+* Dentro da pasta assets, existe a collection do Postman para testes das rotas.
