@@ -2,6 +2,7 @@ defmodule Backend.Usuarios.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @moduledoc false
   schema "users" do
     field :city, :string
     field :complement_address, :string
