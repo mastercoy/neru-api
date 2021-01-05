@@ -24,6 +24,10 @@ defmodule BackendWeb.UserController do
       user_params
     end
 
+    if status != :ok do
+
+    end
+
 
     with {:ok, %User{} = user} <- Usuarios.create_user(user_params) do
       conn
